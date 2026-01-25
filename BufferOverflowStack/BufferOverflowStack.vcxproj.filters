@@ -15,39 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DefinesMacros.hpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HEVDCommunication.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exception.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowsException.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PostExploitation.hpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PostExploitation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ByteVectorUtils.cpp">
+    <ClCompile Include="BufferOverflowStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HEVDCommunication.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Exception.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowsException.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ByteVectorUtils.hpp">
+    <ClInclude Include="BufferOverflowStack.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

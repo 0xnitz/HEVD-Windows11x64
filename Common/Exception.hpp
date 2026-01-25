@@ -40,7 +40,8 @@ namespace ArcaneErrors
 		GetProcessIdOfThreadFailed,
 		GetModuleFileNameWFailed,
 		Thread32FirstWFailed,
-		DeviceIoControlFailed
+		DeviceIoControlFailed,
+		VirtualAllocFailed
 	};
 }
 

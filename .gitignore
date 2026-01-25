@@ -363,3 +363,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.dmp
+gadgets.txt
+gadgets_win32k.txt
+
+*/.obsidian/*
