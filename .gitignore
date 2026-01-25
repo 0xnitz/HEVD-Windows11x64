@@ -367,3 +367,4 @@ gadgets.txt
 gadgets_win32k.txt
 
 */.obsidian/*
+.obsidian/*

