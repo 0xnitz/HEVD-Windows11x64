@@ -109,3 +109,5 @@ or rax, rcx ✅
 mov cr4, rax ✅
 
 ```
+
+> I know it was possible to place the wanted cr4 value on the stack and start the shellcode with `pop rax` and then `mov cr4, rax` and that's it but I wanted to craft the value myself, and leave space for  a `cr4` read and returning the value after exploitation for later. Also, crafting complicated ROP chains is fun :)

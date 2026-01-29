@@ -36,6 +36,12 @@
     <ClCompile Include="ByteVectorUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PreExploitation.hpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreExploitation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HEVDCommunication.hpp">

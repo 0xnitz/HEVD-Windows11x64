@@ -8,6 +8,8 @@
 
 #define UNUSED(var) [[maybe_unused]] var
 
+#define DEBUG_PRINT(message) OutputDebugStringA(std::string(message).c_str())
+
 using Byte = uint8_t;
 using ByteVector = std::vector<Byte>;
 using Address64 = uint64_t;
@@ -20,3 +22,4 @@ static const std::filesystem::path PRIMAL_DEVICE_NAME = L"\\\\.\\HackSysExtremeV
 
 static constexpr uint64_t ARBITRARY_WRITE_IOCTL = 0x22200B;
 static constexpr uint64_t BUFFER_OVERFLOW_STACK_IOCTL = 0x222003;
+static constexpr uint64_t DOUBLE_FETCH_IOCTL = 0x222037;

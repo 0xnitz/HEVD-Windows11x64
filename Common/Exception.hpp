@@ -41,7 +41,9 @@ namespace ArcaneErrors
 		GetModuleFileNameWFailed,
 		Thread32FirstWFailed,
 		DeviceIoControlFailed,
-		VirtualAllocFailed
+		VirtualAllocFailed,
+		EnumDeviceDriversFailed,
+		GetDeviceDriverBaseNameWFailed
 	};
 }
 

