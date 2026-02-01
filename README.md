@@ -12,4 +12,5 @@ Bof = duable (have solution up). Can't overwrite PTE_BASE, but I can ROP to disa
 WWW = easy. I have a dummy solution up, that just patches EPROCESS->Token. I can make this cleaner by reading the ntos offset of `PsActiveProcessHead` from disk, the ntos address from the API and using the
 	WWW as a read primitive to walk the list and patch the addresses. I believe my dummy solution is enough for now (but I might change it to the cleaner version in the future).
 Double Fetch (TOCTOU) = easy, my most recent solution, just BoF with extra steps, I'll do the full exploit with this one.
-Pool IOCTLS = seems fun, will try later
+Pool IOCTLS = seems fun, will try later.
+Write Null = also seems fun, will try later, probably my next solution.
