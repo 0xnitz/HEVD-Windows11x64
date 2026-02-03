@@ -23,3 +23,4 @@ static const std::filesystem::path PRIMAL_DEVICE_NAME = L"\\\\.\\HackSysExtremeV
 static constexpr uint64_t ARBITRARY_WRITE_IOCTL = 0x22200B;
 static constexpr uint64_t BUFFER_OVERFLOW_STACK_IOCTL = 0x222003;
 static constexpr uint64_t DOUBLE_FETCH_IOCTL = 0x222037;
+static constexpr uint64_t INTEGER_OVERFLOW_IOCTL = 0x222027;

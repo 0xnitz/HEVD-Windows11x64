@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcxproj", "{78A01E48-3EB0-43A7-9877-4AC6C2FD0BA7}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BufferOverflowStack", "BufferOverflowStack\BufferOverflowStack.vcxproj", "{4763969B-062A-4F05-806C-55706DC0DA37}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoubleFetch", "DoubleFetch\DoubleFetch.vcxproj", "{42328764-46D2-4672-A847-D32600460B3A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntegerOverflow", "IntegerOverflow\IntegerOverflow.vcxproj", "{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{42328764-46D2-4672-A847-D32600460B3A}.Release|x64.Build.0 = Release|x64
 		{42328764-46D2-4672-A847-D32600460B3A}.Release|x86.ActiveCfg = Release|Win32
 		{42328764-46D2-4672-A847-D32600460B3A}.Release|x86.Build.0 = Release|Win32
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Debug|x64.ActiveCfg = Debug|x64
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Debug|x64.Build.0 = Debug|x64
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Debug|x86.ActiveCfg = Debug|Win32
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Debug|x86.Build.0 = Debug|Win32
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Release|x64.ActiveCfg = Release|x64
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Release|x64.Build.0 = Release|x64
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Release|x86.ActiveCfg = Release|Win32
+		{6A1A788A-6FDF-49D2-9B78-C045510ACAB6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

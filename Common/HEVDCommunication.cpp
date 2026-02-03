@@ -5,7 +5,7 @@ HEVDCommunication::HEVDCommunication() :
 {
 }
 
-ByteVector HEVDCommunication::call_ioctl(const uint32_t ioctl_code, ByteVector& in_buffer, const uint32_t out_buffer_size)
+ByteVector HEVDCommunication::call_ioctl(const uint32_t ioctl_code, ByteVector& in_buffer, const uint32_t out_buffer_size, const DWORD in_buffer_size)
 {
 	ByteVector out_buffer;
 	out_buffer.resize(out_buffer_size);
@@ -14,7 +14,7 @@ ByteVector HEVDCommunication::call_ioctl(const uint32_t ioctl_code, ByteVector& 
 	BOOL ioctl_result = DeviceIoControl(m_handle,
 		ioctl_code,
 		in_buffer.data(),
-		static_cast<DWORD>(in_buffer.size()),
+		in_buffer_size ? in_buffer_size : static_cast<DWORD>(in_buffer.size()),
 		out_buffer.data(),
 		out_buffer_size,
 		&bytes_returned,
