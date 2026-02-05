@@ -19,7 +19,7 @@ ByteVector HEVDCommunication::call_ioctl(const uint32_t ioctl_code, ByteVector& 
 		out_buffer_size,
 		&bytes_returned,
 		nullptr);
-	if (ioctl_result == FALSE)
+	if (ioctl_result == FALSE && GetLastError() != ERROR_GEN_FAILURE) // The UAF handler returns GEN_FAILURE on success..
 	{
 		throw WindowsException(ArcaneErrors::ErrorCodes::DeviceIoControlFailed);
 	}

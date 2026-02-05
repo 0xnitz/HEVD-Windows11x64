@@ -1,6 +1,6 @@
 #include "Exception.hpp"
 #include "DefinesMacros.hpp"
-#include "IntegerOverflow.hpp"
+#include "UseAfterFree.hpp"
 
 #include <windows.h>
 
@@ -13,7 +13,7 @@ int wWinMain(
 {
     try
     {
-        IntegerOverflow::exploit();
+        UseAfterFree::exploit();
     }
     CATCH_ALL("Exception caught in Arcane main!")
 

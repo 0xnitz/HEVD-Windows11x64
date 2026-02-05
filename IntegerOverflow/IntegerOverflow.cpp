@@ -39,7 +39,7 @@ void exploit()
 {
 	// Technically unexploitable in x64. DWORD is passed onto a 64 bit register and compared to a 64 bit register (0x800). This exploit will work in 32 bit (considering switching Address64 to Address32)
 	// This was fixed in 2020 but the latest release of HEVD is from 2019, this should work on the 2020 unreleased version.
-	DEBUG_PRINT("[+] Starting double fetch exploit...\n");
+	DEBUG_PRINT("[+] Starting integer overflow exploit...\n");
 
 	HEVDCommunication hevd;
 
